@@ -35,7 +35,7 @@ if 'tasas' not in st.session_state:
 
 # --- INTERFAZ GRÁFICA ---
 
-st.title("💸 Conversor Multi-Divisa")
+st.title("logo.png Conversor Multi-Divisa")
 st.markdown("Calculadora con tasas del día (Monitor/BCV/Cripto)")
 
 # SECCIÓN 1: CONFIGURACIÓN DE TASAS (Manual / Híbrido)
@@ -101,4 +101,5 @@ for moneda, tasa_destino in st.session_state['tasas'].items():
         contador += 1
     except:
         pass # Si sobran columnas, no pasa nada
+
 
