@@ -4,7 +4,7 @@ import requests
 # --- CONFIGURACIÓN DE LA PÁGINA ---
 st.set_page_config(
     page_title="Conversor Pro Venezuela",
-    page_icon="💸",
+    page_icon="logo.png",  # <--- Aquí pones el nombre de tu archivo
     layout="centered"
 )
 
@@ -101,3 +101,4 @@ for moneda, tasa_destino in st.session_state['tasas'].items():
         contador += 1
     except:
         pass # Si sobran columnas, no pasa nada
+
