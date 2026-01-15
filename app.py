@@ -34,8 +34,18 @@ if 'tasas' not in st.session_state:
     st.session_state['tasas'] = cargar_tasas_api()
 
 # --- INTERFAZ GRÁFICA ---
+# --- ENCABEZADO CON LOGO Y TÍTULO ---
+# Creamos dos columnas: una estrecha (1 parte) y una ancha (5 partes)
+col_logo, col_texto = st.columns([1, 5])
 
-st.title("logo.png Conversor Multi-Divisa")
+with col_logo:
+    # Asegúrate de que el nombre del archivo sea EXACTO (mayúsculas/minúsculas)
+    st.image("logo.png", width=85) 
+
+with col_texto:
+    # Usamos markdown con '#' para que sea un Título H1, se alinea mejor con la imagen
+    st.markdown("# Conversor Multi-Divisa")
+
 st.markdown("Calculadora con tasas del día (Monitor/BCV/Cripto)")
 
 # SECCIÓN 1: CONFIGURACIÓN DE TASAS (Manual / Híbrido)
@@ -101,5 +111,6 @@ for moneda, tasa_destino in st.session_state['tasas'].items():
         contador += 1
     except:
         pass # Si sobran columnas, no pasa nada
+
 
 
